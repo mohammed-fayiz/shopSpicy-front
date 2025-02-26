@@ -12,7 +12,8 @@ const mystyle={
     width:'100%',
     paddingTop:'20px',
     paddingBottom:'20px',
-    gap:'10px'
+    gap:'10px',
+    marginBottom:'0px',
 }
 
 export default function Footer(){

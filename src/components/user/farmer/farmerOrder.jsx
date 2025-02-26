@@ -327,7 +327,7 @@ function FarmerOrder() {
     </BootstrapDialog>
   </React.Fragment>
     <Container>
-      <div style={orderData==''?{display:'flex'}:{display:'none'}}>
+      <div style={orderData==''&&cartData==''?{display:'flex'}:{display:'none'}}>
         <h1 style={{color:'grey',margin:'auto',marginTop:'100px'}}>No orders</h1>
       </div>
     <div className="order-container">
