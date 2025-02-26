@@ -79,7 +79,7 @@ export default function Login() {
           />
         </FormControl>
         <Button style={{backgroundColor:'rgb(12, 155, 121)'}} variant="contained" onClick={handleSubmit}>Log In</Button>
-        <p style={{textAlign:'center',textDecoration:'none'}}>Not registered?<a href="/register"  style={{textDecoration:'none'}}>Sign up</a></p>
+        <p style={{textAlign:'center',textDecoration:'none'}}>Not registered?<a href="" onClick={()=>navigate('/register')}  style={{textDecoration:'none'}}>Sign up</a></p>
     </Box>
     </Container>
         </div>
