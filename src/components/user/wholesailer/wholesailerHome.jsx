@@ -215,7 +215,13 @@ function WholesailerHome() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -263,7 +269,7 @@ function WholesailerHome() {
           </DialogContent>
         </BootstrapDialog>
       </React.Fragment>
-      <Container>
+      <Container style={{paddingBottom:'80px'}}>
             
               <div className='whole-home'>
                   <div className='whole-home-section' onClick={()=>navigate('/user/wholesailer/wholebuy')}>

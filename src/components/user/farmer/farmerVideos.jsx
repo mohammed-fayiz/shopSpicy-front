@@ -31,7 +31,7 @@ export default function FarmVideos() {
     },[])
     console.log(record)
   return (
-   <Container>
+   <Container style={{paddingBottom:'80px'}}>
         <div className="grid-container">
             {
                 record.map((video)=>

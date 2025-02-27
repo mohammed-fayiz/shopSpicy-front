@@ -65,7 +65,7 @@ export default function Login() {
       <div className="form-navbar">
       <h4 style={{fontStyle:'italic'}}>shopSpicy</h4>
       </div>
-      <div className='form-container'>
+      <div className='form-container' style={{paddingBottom:'80px'}}>
         <Container>
         <Box  className="form-box">
             <h1>Log In</h1>
@@ -79,7 +79,7 @@ export default function Login() {
           />
         </FormControl>
         <Button style={{backgroundColor:'rgb(12, 155, 121)'}} variant="contained" onClick={handleSubmit}>Log In</Button>
-        <p style={{textAlign:'center',textDecoration:'none'}}>Not registered?<a href="/register"  style={{textDecoration:'none'}}>Sign up</a></p>
+        <p style={{textAlign:'center',textDecoration:'none'}}>Not registered? </p><Button onClick={()=>navigate("/register")}>Sign up</Button>
     </Box>
     </Container>
         </div>

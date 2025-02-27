@@ -39,8 +39,6 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 console.log('url',url)
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function FarmerCart() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -292,7 +290,13 @@ function FarmerCart() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -338,7 +342,7 @@ function FarmerCart() {
       </DialogActions>
     </BootstrapDialog>
   </React.Fragment>
-    <Container>
+    <Container style={{paddingBottom:'80px'}}>
         <div className="cart-home">
             <div className="cart-home-left">
                 <div className="cart-container">

@@ -27,7 +27,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import axios from 'axios';
@@ -164,7 +163,7 @@ export default function UserList() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }} style={{paddingBottom:'80px'}}>
       <CssBaseline />
       <AppBar position="fixed" open={open} style={{backgroundColor:'rgb(12, 155, 121)'}}>
         <Toolbar>
@@ -447,6 +446,7 @@ export default function UserList() {
             <StyledTableCell style={{backgroundColor:'rgb(12, 155, 121)'}} align="right">Email ID</StyledTableCell>
             <StyledTableCell align="right" style={{backgroundColor:'rgb(12, 155, 121)'}}>Mobile</StyledTableCell>
             <StyledTableCell align="right" style={{backgroundColor:'rgb(12, 155, 121)'}}>User Type</StyledTableCell>
+            <StyledTableCell align="left" style={{width:'130px',backgroundColor:'rgb(12, 155, 121)'}}>Active</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -458,6 +458,12 @@ export default function UserList() {
               <StyledTableCell align="right">{row.email}</StyledTableCell>
               <StyledTableCell align="right">{row.mobile}</StyledTableCell>
               <StyledTableCell align="right">{row.userType}</StyledTableCell>
+              <StyledTableCell align="right">
+                <div style={{display:'flex',justifyContent:'center',gap:'10px',alignItems:'center',border:'1px solid rgb(209, 223, 219)',borderRadius:'10px',padding:'5px'}}>
+                <div style={row.isActive=='active'?{borderRadius:'50%',width:'10px',height:'10px',backgroundColor:'green'}:{borderRadius:'50%',width:'10px',height:'10px',backgroundColor:'red'}}></div>
+                <p>{row.isActive}</p>
+                </div>
+                </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

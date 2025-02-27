@@ -28,6 +28,7 @@ import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantity
 import { Button } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 import {FormControl,InputLabel,Select,MenuItem} from '@mui/material';
+import Footer from '../footer';
 const url=import.meta.env.VITE_BASE_URL
 
 
@@ -441,7 +442,7 @@ export default function OrderList() {
           ))}
         </List> */}
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }} style={{paddingBottom:'80px'}}>
         <DrawerHeader />
         <FormControl style={{width:'150px',marginBottom:'10px'}}>
             <InputLabel id="demo-simple-select-label" >Filter</InputLabel>
@@ -589,6 +590,7 @@ export default function OrderList() {
                 }
             </div>
       </Box>
+      <Footer/>
     </Box>
   );
 }

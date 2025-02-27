@@ -280,7 +280,13 @@ function WholeDashboard() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -328,7 +334,7 @@ function WholeDashboard() {
           </DialogContent>
         </BootstrapDialog>
       </React.Fragment>
-        <Container>
+        <Container style={{paddingBottom:'80px'}}>
         <div className='product-div'>
           <div className="product-div-left" style={{padding:'0px'}} >
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

@@ -263,7 +263,13 @@ function WholeBuy() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -311,7 +317,7 @@ function WholeBuy() {
           </DialogContent>
         </BootstrapDialog>
       </React.Fragment>
-      <Container>
+      <Container style={{paddingBottom:'80px'}}>
         <Box sx={{ flexGrow: 1 }} marginTop={'20px'}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className='buy-grid-container'>
           {orderData.filter(user=>user.userId.userType=='farmer' && user.productId!=null).map((order) => (

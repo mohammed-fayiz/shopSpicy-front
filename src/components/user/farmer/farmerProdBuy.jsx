@@ -63,7 +63,7 @@ export default function FarmProdBuy() {
     }
 
   return (
-   <Container>
+   <Container style={{paddingBottom:'80px'}}>
         <div className="grid-container">
         {
                 record.filter((it)=>it.userType=="farmer"&&it.prodname!="coffee").map((item)=>(

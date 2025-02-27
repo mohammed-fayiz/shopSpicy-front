@@ -208,7 +208,13 @@ function RetailerHome() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -266,7 +272,8 @@ function RetailerHome() {
               useKeyboardArrows={true}
               showArrows={false}
               showIndicators={true}
-              className='carousel-main-retailer'>
+              className='carousel-main-retailer'
+              style={{paddingBottom:'80px'}}>
               <div className='carousel-style-retailer'>
 
                   <div >

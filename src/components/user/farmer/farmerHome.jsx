@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { data, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const url=import.meta.env.VITE_BASE_URL
 
@@ -35,8 +35,6 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function FarmerHome() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -229,6 +227,13 @@ function FarmerHome() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
               
             </Menu>
           </Box>
@@ -293,7 +298,7 @@ function FarmerHome() {
       </DialogActions>
     </BootstrapDialog>
   </React.Fragment>
-    <Container>
+    <Container style={{paddingBottom:'80px'}}>
     <div className="home-content-div">
     
     <div className="home-content-left">

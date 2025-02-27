@@ -32,6 +32,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import InfoIcon from '@mui/icons-material/Info';
 import { TextField } from '@mui/material';
 import {Container} from '@mui/material';
+import Footer from '../../../footer';
 
 const url=import.meta.env.VITE_BASE_URL
 
@@ -185,7 +186,7 @@ export default function AdFarmerService() {
 
   return (
     <>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex' }} style={{paddingBottom:'80px'}}>
       <CssBaseline />
       <AppBar position="fixed" open={open} style={{backgroundColor:'rgb(12, 155, 121)'}}>
         <Toolbar>
@@ -340,6 +341,7 @@ export default function AdFarmerService() {
               }
               
           </div>
+          
     </Container>
     </>
   );

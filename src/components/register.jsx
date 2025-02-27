@@ -51,7 +51,7 @@ export default function Register() {
       <h4 style={{fontStyle:'italic'}}>shopSpicy</h4>
       </div>
       
-      <div className='form-container'>
+      <div className='form-container' style={{paddingBottom:'80px'}}>
         <Container>
         <Box  className="form-box">
             <h1>Sign Up</h1>

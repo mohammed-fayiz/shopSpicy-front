@@ -7,7 +7,7 @@ import { Container } from '@mui/material';
 export default function FarmNotes(){
     return(
         <>
-    <Container id="carousel">
+    <Container id="carousel" style={{paddingBottom:'80px'}}>
     
     <Carousel 
     infiniteLoop={true}

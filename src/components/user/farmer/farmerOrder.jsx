@@ -40,8 +40,6 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function FarmerOrder() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -280,7 +278,13 @@ function FarmerOrder() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -326,7 +330,7 @@ function FarmerOrder() {
       </DialogActions>
     </BootstrapDialog>
   </React.Fragment>
-    <Container>
+    <Container style={{paddingBottom:'80px'}}>
       <div style={orderData==''&&cartData==''?{display:'flex'}:{display:'none'}}>
         <h1 style={{color:'grey',margin:'auto',marginTop:'100px'}}>No orders</h1>
       </div>

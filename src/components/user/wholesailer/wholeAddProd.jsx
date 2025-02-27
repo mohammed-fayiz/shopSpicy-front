@@ -327,7 +327,13 @@ function WholeAddProd() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -375,7 +381,7 @@ function WholeAddProd() {
           </DialogContent>
         </BootstrapDialog>
       </React.Fragment>
-      <Container>
+      <Container style={{paddingBottom:'80px'}}>
          <Button variant="contained" onClick={()=>{setDivShow('show')}} endIcon={<AddIcon />} style={{backgroundColor:"rgb(12, 155, 121",marginTop:'20px'}}>
             Add Product
         </Button>

@@ -175,7 +175,7 @@ record3.filter((it)=>counterOrders(it.userType))
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }} style={{paddingBottom:'80px'}}>
       <CssBaseline />
       <AppBar position="fixed" open={open} style={{backgroundColor:'rgb(12, 155, 121)'}}>
         <Toolbar>

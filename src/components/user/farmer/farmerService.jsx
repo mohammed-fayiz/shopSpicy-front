@@ -232,7 +232,13 @@ export default function FarmerService() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
-              
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -291,7 +297,7 @@ export default function FarmerService() {
         <BottomNavigationAction label="Video's" onClick={()=>{setVisible('videos')}} />
       </BottomNavigation>
     </Box>
-    <Container>
+    <Container style={{paddingBottom:'80px'}}>
         {/* <span  style={visible=='notes'?{visibility:"visible",marginTop:'0px'}:{visibility:'hidden'}}>
             <FarmNotes />
             <FarmVideos/>

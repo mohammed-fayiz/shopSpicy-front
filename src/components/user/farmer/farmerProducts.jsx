@@ -237,6 +237,13 @@ export default function FarmerProducts() {
                     }}>
                   <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
                 </MenuItem>
+                <MenuItem  onClick={()=>{
+                    axios.post(`${url}/user/deleteaccount`,{data:{userId:record._id}})
+                    navigate('/')
+                    sessionStorage.clear()
+                    }}>
+                  <Typography sx={{ textAlign: 'center' }}>Delete</Typography>
+                </MenuItem>
               
             </Menu>
           </Box>
@@ -300,7 +307,7 @@ export default function FarmerProducts() {
         <BottomNavigationAction label="sell" onClick={()=>{setVisible('sell')}} />
       </BottomNavigation>
     </Box>
-    <Container>
+    <Container style={{paddingBottom:'80px'}}>
         {
             visible=="buy"?<FarmProdBuy/>:<FarmProdSell/>
         }
